@@ -1,0 +1,265 @@
+@import "../responsive/breakpoints";
+@import "../abstract/variable";
+.custom_modal {
+  position: fixed;
+  background: $bg-white;
+  border: 1px solid hsla(0deg, 0%, 88%, 0.38) !important;
+  padding: 25px;
+  width: 450px;
+  height: auto;
+  margin: 0 auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  transform-origin: center;
+  z-index: 9999;
+  @include breakpoints(semiPortraitTablet) {
+    width: 80%;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      font-size: 25px;
+      font-weight: 600;
+      color: #000;
+      @include breakpoints(semiPortraitTablet) {
+        font-size: 18px;
+      }
+    }
+    span {
+      font-size: 25px;
+      cursor: pointer;
+      user-select: none;
+      color: $text-default-color;
+    }
+  }
+  .wallet_img {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    @include breakpoints(semiPortraitTablet) {
+      flex-wrap: wrap;
+    }
+    .img_box {
+      background: $gray-hover-bg-color;
+      padding: 20px;
+      width: 50%;
+      text-align: center;
+      margin: 10px;
+      cursor: pointer;
+      user-select: none;
+      @include breakpoints(semiPortraitTablet) {
+        width: 100%;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        @include breakpoints(semiPortraitTablet) {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary-text-color;
+      }
+    }
+  }
+}
+// backdrop effect
+.backdrop_effect {
+  position: fixed;
+  background: rgb(0 0 0 / 71%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+// header csss
+.header_wrapper {
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+  background: $white-bg-color;
+  .header_twice_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .header_logo {
+      h2 {
+        font-size: 25px;
+        font-weight: 600;
+        font-family: $font-family;
+        color: $primary-text-color;
+      }
+    }
+    .header_left_content {
+      display: flex;
+      align-items: center;
+      .network_selector {
+        display: flex;
+        align-items: center;
+        .network_list {
+          position: relative;
+          .network_state {
+            font-size: 14px;
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            border-radius: 3px;
+            color: $gray-white-text-color;
+            cursor: pointer;
+            user-select: none;
+            @include breakpoints(semiPortraitTablet) {
+              padding: 5px 0px;
+            }
+            img {
+              margin-right: 8px;
+              margin-bottom: -2px;
+              @include breakpoints(semiPortraitTablet) {
+                margin-right: -6px;
+                width: 20px !important;
+                margin-bottom: -5px;
+              }
+            }
+            .network_name {
+              @include breakpoints(semiPortraitTablet) {
+                display: none;
+              }
+            }
+            span {
+              svg {
+                margin-bottom: -3px;
+                margin-left: 8px;
+              }
+            }
+          }
+          .network_list_popover {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 225px;
+            height: auto;
+            background: white;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 3px;
+            box-shadow: 0px 4px 9px -8px grey;
+            @include breakpoints(largeMobile) {
+              right: -97px;
+            }
+            ul {
+              list-style: none;
+              li {
+                display: flex;
+                align-items: center;
+                padding: 7px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+                &:hover {
+                  background: $gray-hover-bg-color;
+                }
+                img {
+                  width: 15px;
+                  height: 15px;
+                  margin-right: 10px;
+                }
+                p {
+                  font-size: 14px;
+                  color: $gray-white-text-color;
+                }
+              }
+            }
+          }
+        }
+        .connect_wlt_btn {
+          margin-left: 10px;
+          .connect_btn {
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            background: transparent;
+            border: 2px solid $primary-text-color;
+            padding: 9px 20px;
+            border-radius: 3px;
+            font-size: 14px;
+            color: $primary-text-color;
+            font-weight: 600;
+            cursor: pointer;
+            @include breakpoints(semiPortraitTablet) {
+              padding: 9px 0px;
+              border: none;
+              font-size: 25px;
+              span {
+                display: none;
+              }
+            }
+            svg {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+      .user_toggler {
+        margin-left: 10px;
+        position: relative;
+        .icon {
+          border: 1px solid #eee;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: #eee;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: black;
+          padding: 5px;
+          box-shadow: 0px 4px 10px -9px $gray-white-text-color;
+          cursor: pointer;
+          @include breakpoints(semiPortraitTablet) {
+            width: 22px;
+            height: 22px;
+          }
+          svg {
+            font-size: 25px;
+            color: $gray-white-text-color;
+          }
+        }
+        .user_menu_list {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          width: 140px;
+          height: auto;
+          background: white;
+          border: 1px solid #eee;
+          padding: 10px;
+          border-radius: 3px;
+          box-shadow: 0px 4px 9px -8px grey;
+          ul {
+            list-style: none;
+            li {
+              a {
+                text-decoration: none;
+                font-size: 14px !important;
+                color: $gray-white-text-color;
+                display: block;
+                padding: 5px 10px;
+                &:hover {
+                  background: $gray-hover-bg-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

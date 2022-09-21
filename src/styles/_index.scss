@@ -1,0 +1,19 @@
+@import "./abstract/variable";
+@import "./global/reset";
+@import "./global/global";
+@import "./responsive/breakpoints";
+@import "./components/index";
+@import "./pages/index";
+
+html {
+  scroll-behavior: smooth;
+}
+.dashboard_home_wrapper {
+  display: flex;
+  .menu_backdrop {
+    display: none;
+    @include breakpoints(tablet) {
+      display: block;
+    }
+  }
+}

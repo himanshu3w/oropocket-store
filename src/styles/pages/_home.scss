@@ -1,0 +1,67 @@
+.home_wrapper {
+  background: $gray-white-bg-color;
+  padding-bottom: 20px;
+  .home_content {
+    margin-top: 50px !important;
+    padding: 25px 20px;
+    border: 1px solid #eee;
+    background: $white-bg-color;
+    .input_field {
+      width: 20%;
+      margin-top: 15px !important;
+      margin: auto;
+      form {
+        label {
+          font-weight: 600;
+          color: $primary-text-color;
+          font-size: 13px;
+          width: 100%;
+        }
+        input {
+          margin-top: 5px !important;
+          outline: none;
+          border: 1px solid #eee;
+          padding: 10px;
+          border-radius: 3px;
+          width: 100%;
+        }
+        button {
+          margin-top: 20px;
+          background: $primary-bg;
+          color: $white-text-color;
+          text-transform: capitalize;
+          font-size: 13px;
+          font-weight: 600;
+          padding: 10px 15px;
+          border: none;
+          cursor: pointer;
+          border-radius: 3px;
+          width: 100%;
+        }
+      }
+    }
+    .display_content {
+      width: 50%;
+      margin-top: 30px !important;
+      margin: auto;
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        .sum {
+          border: 1px solid #eee;
+          width: 200px;
+          padding: 10px;
+          font-size: 14px;
+        }
+        .value {
+          border: 1px solid #eee;
+          width: 200px;
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
